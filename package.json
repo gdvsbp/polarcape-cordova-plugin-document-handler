@@ -1,8 +1,8 @@
 {
   "name": "polarcape-cordova-plugin-document-handler",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A phonegap plugin to handle documents (f.e. PDFs) loaded from a URL.",
-  "main": "www/DocumentHandler.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
