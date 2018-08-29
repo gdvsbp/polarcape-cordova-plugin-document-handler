@@ -1,4 +1,4 @@
-var DocumentViewer = ( function () {
+;( function () {
     var viewDocument = function (
             successHandler,
             failureHandler,
@@ -76,9 +76,9 @@ var DocumentViewer = ( function () {
         }
     };
 
-    return DocumentViewer;
+    window.DocumentViewer = DocumentViewer;
+    
+    if (window.module && window.module.exports) {
+        window.module.exports = DocumentViewer;
+    }
 } ) ();
-
-if (window.module && window.module.exports) {
-    window.module.exports = DocumentViewer;
-}
