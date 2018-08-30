@@ -1,4 +1,4 @@
-;( function() {
+;( function( root ) {
   var viewDocument = function(
     successHandler,
     failureHandler,
@@ -76,6 +76,12 @@
     }
   };
 
+  /** Detect free variable `exports`. */
+  var freeExports = typeof exports !== 'undefined' && exports && !exports.nodeType && exports;
+
+  /** Detect free variable `module`. */
+  var freeModule = typeof module !== 'undefined' && module && !module.nodeType && module;
+
 
   // Some AMD build optimizers, like r.js, check for condition patterns like:
   if( typeof define === 'function' && typeof define.amd === 'object' && define.amd ) {
@@ -85,7 +91,7 @@
     } );
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
-  else if( freeModule ) {
+  else if( freeModule && freeExports ) {
     // Export for Node.js.
     ( freeModule.exports = DocumentHandler ).DocumentHandler = DocumentHandler;
     // Export for CommonJS support.
@@ -94,4 +100,4 @@
     // Export to the global object.
     root.DocumentHandler = DocumentHandler;
   }
-} )();
+} )( this );
